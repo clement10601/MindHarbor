@@ -47,4 +47,4 @@ Prompt specification v0.5. Community feedback and translations are welcome. Engl
 
 ## License
 
-No open-source license has been chosen yet. Until a license is added, normal copyright restrictions apply. Please choose a license before inviting reuse or contributions.
+[MIT](LICENSE). You are free to use, modify, and share MindHarbor, including in your own projects, as long as the copyright notice is kept.
