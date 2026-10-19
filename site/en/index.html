@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MindHarbor | An AI companion that talks like a friend</title>
+<meta name="description" content="MindHarbor is a conversation Skill for ChatGPT. Chat naturally, talk by voice while you do other things, and turn your day into a journal entry when you want to.">
+<link rel="canonical" href="https://mindharbor.fezone.tw/en/">
+<link rel="alternate" hreflang="zh-Hant" href="https://mindharbor.fezone.tw/">
+<link rel="alternate" hreflang="en" href="https://mindharbor.fezone.tw/en/">
+<meta property="og:title" content="MindHarbor">
+<meta property="og:description" content="An AI companion that talks like a friend. Chat by voice while you do other things, and turn your day into a journal entry when you want to.">
+<meta property="og:url" content="https://mindharbor.fezone.tw/en/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/en/">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="16" cy="7" r="3"/><path d="M16 10v17"/><path d="M10 15h12"/><path d="M5 19c1 5 5.5 8 11 8s10-3 11-8"/>
+      </svg>
+      MindHarbor
+    </a>
+    <nav>
+      <a href="#how">Get started</a>
+      <a href="#bounds">Privacy</a>
+      <a href="https://github.com/clement10601/MindHarbor">GitHub</a>
+      <a class="lang" href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <p class="eyebrow">A ChatGPT conversation Skill · Free to use</p>
+        <h1>Talk it out after work.<br>Leave with your thoughts in order.</h1>
+        <p class="lede">MindHarbor turns ChatGPT into a friend you can talk to. Switch on voice and chat while you watch a show, drifting from small talk to work stress without a stream of questions getting in the way. When you want, it turns the conversation into a journal entry.</p>
+        <div class="ctas">
+          <a class="btn primary" href="#how">Start in ChatGPT</a>
+          <a class="btn" href="https://github.com/clement10601/MindHarbor">View on GitHub</a>
+        </div>
+        <p class="note">Works in English and Traditional Chinese. No coding and no other apps needed.</p>
+      </div>
+      <div class="chat" aria-label="Sample conversation">
+        <div class="meta"><span class="dot"></span>Voice chat</div>
+        <div class="bubble me">Worked late again. Mind if I chat while I watch some anime?</div>
+        <div class="bubble ai">Long day. What are you watching? Let's unwind first, and we can get to work stuff if you feel like it.</div>
+        <div class="bubble me">An isekai one. Honestly I'm a bit worried AI will make jobs harder to find.</div>
+        <div class="bubble ai">That's a real worry. Is it more about your current job, or where things are heading long term?</div>
+        <div class="bubble me">Both, I guess. Could you write down how I'm feeling today?</div>
+        <div class="bubble ai">Sure. I'll turn what we talked about into a journal entry for you to read.</div>
+      </div>
+    </div>
+
+    <section>
+      <h2>What it does</h2>
+      <p class="sub">Not a questionnaire, and not a therapy session. Just someone who listens and keeps up with the conversation.</p>
+      <div class="grid3">
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg>
+          <h3>Talks like a friend</h3>
+          <p>From anime and everyday life to work and the bigger questions, with no modes to switch. It follows your pace and doesn't treat every sentence as a problem to fix.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg>
+          <h3>Just switch on voice</h3>
+          <p>With ChatGPT voice mode you can talk on the way home, while doing the dishes, or during a show, without typing.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4Z"/><path d="M8 9h8M8 13h6"/></svg>
+          <h3>Writes your journal</h3>
+          <p>When you ask, it turns the conversation into a journal entry. It only uses what you actually talked about and never makes things up.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2>Get started</h2>
+      <p class="sub">MindHarbor is a set of instructions for a ChatGPT Project. Set it up once and keep using it.</p>
+      <ol class="steps">
+        <li><div><strong>Create a new Project in ChatGPT</strong><span>You can call it MindHarbor.</span></div></li>
+        <li><div><strong>Copy the Skill</strong><span>On GitHub, open <code>skills/en/SKILL.md</code> (or <code>skills/zh-TW/SKILL.md</code> for Chinese) and copy all of it.</span></div></li>
+        <li><div><strong>Paste it into the Project instructions</strong><span>Open the Project settings, paste it into Instructions, and save.</span></div></li>
+        <li><div><strong>Start a new chat, or switch on voice</strong><span>Try “I'd like to chat while I watch something” or “Help me write down how today went.”</span></div></li>
+      </ol>
+      <div class="ctas" style="margin-top:32px">
+        <a class="btn primary" href="https://github.com/clement10601/MindHarbor/blob/main/docs/QUICKSTART.md">Full setup guide</a>
+      </div>
+    </section>
+
+    <section id="bounds">
+      <h2>Privacy and boundaries</h2>
+      <p class="sub">Talking about how you feel should feel safe. These principles are built into MindHarbor from the start.</p>
+      <div class="two">
+        <ul class="bounds">
+          <li>It never saves your conversations or journal to Notion, Google Drive, or any other service without your clear permission.</li>
+          <li>Journal entries only use what you shared. It doesn't invent events that didn't happen.</li>
+          <li>Your conversations stay in your own ChatGPT account. MindHarbor itself collects no data.</li>
+          <li>MindHarbor is not therapy, diagnosis, or a medical service, and it can't replace professional help.</li>
+        </ul>
+        <div class="help">
+          <h3>If you're struggling right now</h3>
+          <p>If you're in immediate danger, call your local emergency number.</p>
+          <p>To talk to someone, find a free, confidential helpline in your country at <a href="https://findahelpline.com">findahelpline.com</a>. In Taiwan, call <strong>1925</strong> (24 hours).</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>MindHarbor is made by <a href="https://fezone.tw">Fezone Ltd.</a></span>
+    <span><a href="https://github.com/clement10601/MindHarbor">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
