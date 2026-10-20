@@ -43,6 +43,8 @@
 
 ## 3. 打包 plugin ZIP
 
+套件來源在 `plugin/`，跑 `scripts/build-plugin.sh` 會從 `skills/` 組好並輸出 `dist/mindharbor-plugin.zip`，可直接上傳。結構如下：
+
 ```
 mindharbor-plugin/
 ├── plugin.json
