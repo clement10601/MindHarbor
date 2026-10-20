@@ -30,6 +30,7 @@
     <nav>
       <a href="#how">Get started</a>
       <a href="#bounds">Privacy</a>
+      <a href="#feedback">Feedback</a>
       <a href="https://github.com/clement10601/MindHarbor">GitHub</a>
       <a class="lang" href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a>
     </nav>
@@ -101,7 +102,7 @@
         <ul class="bounds">
           <li>It never saves your conversations or journal to Notion, Google Drive, or any other service without your clear permission.</li>
           <li>Journal entries only use what you shared. It doesn't invent events that didn't happen.</li>
-          <li>Your conversations stay in your own ChatGPT account. MindHarbor itself collects no data.</li>
+          <li>Your conversations stay in your own ChatGPT account. MindHarbor itself collects no data. The feedback form on this page stores only what you choose to type.</li>
           <li>MindHarbor is not therapy, diagnosis, or a medical service, and it can't replace professional help.</li>
         </ul>
         <div class="help">
@@ -110,6 +111,30 @@
           <p>To talk to someone, find a free, confidential helpline in your country at <a href="https://findahelpline.com">findahelpline.com</a>. In Taiwan, call <strong>1925</strong> (24 hours).</p>
         </div>
       </div>
+    </section>
+    <section id="feedback">
+      <h2>Tell us what you think</h2>
+      <p class="sub">How it went, where it got in the way, what you wish it did. The form is anonymous: no IP address or tracking data is recorded.</p>
+      <form class="feedback" method="post" action="/api/feedback">
+        <input type="hidden" name="lang" value="en">
+        <fieldset>
+          <legend>Overall</legend>
+          <label><input type="radio" name="feeling" value="helpful"> Really helpful</label>
+          <label><input type="radio" name="feeling" value="okay"> It's okay</label>
+          <label><input type="radio" name="feeling" value="not-for-me"> Not for me</label>
+        </fieldset>
+        <label class="field">Anything you'd like to say
+          <textarea name="message" rows="5" maxlength="1000" placeholder="e.g. In voice mode it asks too many questions"></textarea>
+        </label>
+        <p class="hint">Please don't paste conversations or anything that identifies you.</p>
+        <label class="field">Contact (optional)
+          <input type="text" name="contact" maxlength="200" placeholder="Leave an email only if you'd like a reply">
+        </label>
+        <label class="hp" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        <button class="btn primary" type="submit">Send</button>
+        <p class="sent" id="feedback-sent" role="status">Got it, thank you. We read every one.</p>
+      </form>
+      <p class="note">You can also report issues on <a href="https://github.com/clement10601/MindHarbor/issues">GitHub Issues</a>.</p>
     </section>
   </main>
 

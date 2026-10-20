@@ -1,0 +1,24 @@
+name: 使用回饋 / Feedback
+description: 用起來的感覺、卡住的地方、希望加的功能 / How it went, what got in the way, what you'd like
+body:
+  - type: markdown
+    attributes:
+      value: |
+        請不要貼上完整對話或能認出你的個人資料。這裡是公開的。
+        Please don't paste full conversations or personal details. This page is public.
+  - type: dropdown
+    id: version
+    attributes:
+      label: 使用版本 / Version
+      options: [繁體中文 zh-TW, English]
+  - type: textarea
+    id: what
+    attributes:
+      label: 發生什麼事 / What happened
+      description: 例如「語音聊天時它一直問問題」/ e.g. "In voice mode it kept asking questions"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你希望它怎麼做 / What you expected
