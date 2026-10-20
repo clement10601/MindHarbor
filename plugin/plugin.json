@@ -1,0 +1,45 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "mindharbor",
+  "version": "0.5.0",
+  "description": "A friend-like conversation companion for talking through your day, with optional mood journaling. Not therapy or a medical service.",
+  "author": {
+    "name": "Fezone Ltd.",
+    "email": "support@fezone.tw",
+    "url": "https://fezone.tw"
+  },
+  "homepage": "https://mindharbor.fezone.tw/",
+  "repository": "https://github.com/clement10601/MindHarbor",
+  "license": "MIT",
+  "keywords": ["companion", "conversation", "journaling", "wellbeing", "voice"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "MindHarbor",
+        "shortDescription": "Talk things through like you would with a friend",
+        "longDescription": "MindHarbor has ChatGPT chat with you the way a good friend would: following your pace, from everyday topics to work stress, without firing off a list of questions. It works well in voice mode, so you can talk while doing other things. When you ask, it turns what you talked about into a short journal entry. Supports Traditional Chinese and English. MindHarbor is not therapy, counseling, diagnosis, or a medical service, and it is not for emergencies.",
+        "developerName": "Fezone Ltd.",
+        "category": "Lifestyle",
+        "capabilities": ["Supportive conversation", "Mood journaling"],
+        "websiteURL": "https://mindharbor.fezone.tw/",
+        "supportURL": "https://github.com/clement10601/MindHarbor/issues",
+        "privacyPolicyURL": "https://mindharbor.fezone.tw/privacy/",
+        "termsOfServiceURL": "https://mindharbor.fezone.tw/terms/",
+        "defaultPrompt": [
+          "我想邊看動畫邊聊天",
+          "今天工作有點累，想聊聊",
+          "幫我整理今天的心情"
+        ],
+        "brandColor": "#1F6F68",
+        "brandColorDark": "#5CC2B6",
+        "composerIcon": "./assets/icon.png",
+        "composerIconDark": "./assets/icon-dark.png",
+        "logo": "./assets/logo.png",
+        "logoDark": "./assets/logo-dark.png"
+      },
+      "publication": {
+        "release_notes": "First release of MindHarbor v0.5 as a ChatGPT plugin."
+      }
+    }
+  }
+}
