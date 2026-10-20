@@ -1,0 +1,7 @@
+  .legal { max-width: 44em; padding: 40px 0 72px; }
+  .legal h1 { font-size: clamp(28px, 4vw, 38px); margin-bottom: 8px; }
+  .legal .updated { color: var(--muted); font-size: 14px; margin: 0 0 40px; }
+  .legal h2 { font-size: 20px; margin: 40px 0 8px; }
+  .legal p, .legal li { color: var(--ink); }
+  .legal ul { padding-left: 1.2em; }
+  .legal li { margin: 6px 0; }
