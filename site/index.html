@@ -30,6 +30,7 @@
     <nav>
       <a href="#how">怎麼開始</a>
       <a href="#bounds">隱私與界線</a>
+      <a href="#feedback">意見回饋</a>
       <a href="https://github.com/clement10601/MindHarbor">GitHub</a>
       <a class="lang" href="/en/" hreflang="en" lang="en">English</a>
     </nav>
@@ -101,7 +102,7 @@
         <ul class="bounds">
           <li>沒有你明確同意，不會把對話或日記存到 Notion、Google Drive 等任何外部服務。</li>
           <li>整理日記時只根據你提供的內容，不編造沒發生過的事。</li>
-          <li>對話留在你自己的 ChatGPT 帳號裡，MindHarbor 本身不收集任何資料。</li>
+          <li>對話留在你自己的 ChatGPT 帳號裡，MindHarbor 本身不收集任何資料。專頁的意見表單只存你主動填寫的內容。</li>
           <li>MindHarbor 不是心理治療、診斷或醫療服務，不能取代專業協助。</li>
         </ul>
         <div class="help">
@@ -110,6 +111,30 @@
           <p>想找人說說話：安心專線 <strong>1925</strong>（24 小時）、生命線 <strong>1995</strong>、張老師 <strong>1980</strong>。</p>
         </div>
       </div>
+    </section>
+    <section id="feedback">
+      <h2>告訴我們你的想法</h2>
+      <p class="sub">用起來怎麼樣、哪裡卡住、希望它多做什麼，都可以說。表單是匿名的，不會記錄 IP 或任何追蹤資料。</p>
+      <form class="feedback" method="post" action="/api/feedback">
+        <input type="hidden" name="lang" value="zh-TW">
+        <fieldset>
+          <legend>整體感覺</legend>
+          <label><input type="radio" name="feeling" value="helpful"> 很有幫助</label>
+          <label><input type="radio" name="feeling" value="okay"> 還可以</label>
+          <label><input type="radio" name="feeling" value="not-for-me"> 不太適合我</label>
+        </fieldset>
+        <label class="field">想說的話
+          <textarea name="message" rows="5" maxlength="1000" placeholder="例如：語音聊的時候它太常問問題了"></textarea>
+        </label>
+        <p class="hint">請不要貼上對話內容或能認出你的個人資料。</p>
+        <label class="field">聯絡方式（選填）
+          <input type="text" name="contact" maxlength="200" placeholder="想收到回覆再留 Email">
+        </label>
+        <label class="hp" aria-hidden="true">網站 <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        <button class="btn primary" type="submit">送出</button>
+        <p class="sent" id="feedback-sent" role="status">收到了，謝謝你。每一則我們都會看。</p>
+      </form>
+      <p class="note">也可以到 <a href="https://github.com/clement10601/MindHarbor/issues">GitHub Issues</a> 回報問題，或在凡域工作室的 Facebook、Threads 留言。</p>
     </section>
   </main>
 

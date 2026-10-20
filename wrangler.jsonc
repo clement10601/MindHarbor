@@ -1,10 +1,17 @@
 {
   "name": "mindharbor-site",
   "compatibility_date": "2026-10-06",
-  // Static product page only (site/); no Worker script.
+  // Static product page (site/) plus the anonymous feedback endpoint (src/worker.js).
+  "main": "src/worker.js",
   "assets": {
-    "directory": "./site"
+    "directory": "./site",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
   },
+  "d1_databases": [
+    // Schema: schema.sql.
+    { "binding": "FEEDBACK", "database_name": "mindharbor-feedback", "database_id": "4daf01d4-db8a-4833-bbe7-28ac41c8c9c4" }
+  ],
   "routes": [
     { "pattern": "mindharbor.fezone.tw", "custom_domain": true }
   ]

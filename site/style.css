@@ -120,3 +120,24 @@
   @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
 .top nav a.lang { border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; }
 .top nav a.lang:hover { background: var(--surface); }
+
+.feedback { display: grid; gap: 16px; max-width: 620px; }
+.feedback fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 12px; }
+.feedback legend { font-weight: 500; margin-bottom: 8px; padding: 0; }
+.feedback fieldset label {
+  display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+  border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; font-size: 15px;
+}
+.feedback fieldset label:has(input:checked) { border-color: var(--accent); background: var(--surface); }
+.feedback input[type="radio"] { accent-color: var(--accent); margin: 0; }
+.feedback .field { display: grid; gap: 6px; font-weight: 500; }
+.feedback textarea, .feedback input[type="text"] {
+  font: inherit; font-weight: 400; color: var(--ink); background: var(--paper);
+  border: 1px solid var(--rule); border-radius: 12px; padding: 10px 14px; width: 100%;
+}
+.feedback textarea:focus-visible, .feedback input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.feedback .hint { margin: -8px 0 0; font-size: 14px; color: var(--muted); }
+.feedback .btn { justify-self: start; cursor: pointer; font: inherit; font-weight: 500; }
+.feedback .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.feedback .sent { display: none; margin: 0; color: var(--accent); font-weight: 500; }
+.feedback .sent:target { display: block; }
