@@ -9,8 +9,8 @@
     "run_worker_first": ["/api/*"]
   },
   "d1_databases": [
-    // Create with: wrangler d1 create mindharbor-feedback, then apply schema.sql.
-    { "binding": "FEEDBACK", "database_name": "mindharbor-feedback", "database_id": "REPLACE_WITH_D1_ID" }
+    // Schema: schema.sql.
+    { "binding": "FEEDBACK", "database_name": "mindharbor-feedback", "database_id": "4daf01d4-db8a-4833-bbe7-28ac41c8c9c4" }
   ],
   "routes": [
     { "pattern": "mindharbor.fezone.tw", "custom_domain": true }
