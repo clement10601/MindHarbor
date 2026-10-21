@@ -1,5 +1,8 @@
-// Serves the static site and accepts anonymous feedback at POST /api/feedback.
+// Serves the static site, accepts anonymous feedback at POST /api/feedback,
+// and hosts the ChatGPT plugin's MCP server at /mcp.
 // Stores only what the form sends (no IP, no cookies, no user agent).
+
+import { handleMcp } from "./mcp.js";
 
 const FEELINGS = new Set(["helpful", "okay", "not-for-me"]);
 const MAX_MESSAGE = 1000;
@@ -8,6 +11,12 @@ const MAX_CONTACT = 200;
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname === "/mcp") return handleMcp(request);
+    // Domain verification for the OpenAI plugin portal; the token is set in wrangler.jsonc vars.
+    if (url.pathname === "/.well-known/openai-apps-challenge") {
+      if (!env.OPENAI_APPS_CHALLENGE) return new Response("Not Found", { status: 404 });
+      return new Response(env.OPENAI_APPS_CHALLENGE, { headers: { "Content-Type": "text/plain" } });
+    }
     if (url.pathname !== "/api/feedback") return env.ASSETS.fetch(request);
     if (request.method !== "POST") return new Response("Method Not Allowed", { status: 405, headers: { Allow: "POST" } });
 
