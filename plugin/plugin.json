@@ -16,7 +16,7 @@
     "com.openai": {
       "interface": {
         "displayName": "MindHarbor",
-        "shortDescription": "Talk things through like you would with a friend",
+        "shortDescription": "Talk it through like a friend",
         "longDescription": "MindHarbor has ChatGPT chat with you the way a good friend would: following your pace, from everyday topics to work stress, without firing off a list of questions. It works well in voice mode, so you can talk while doing other things. When you ask, it turns what you talked about into a short journal entry. Supports Traditional Chinese and English. MindHarbor is not therapy, counseling, diagnosis, or a medical service, and it is not for emergencies.",
         "developerName": "Fezone Ltd.",
         "category": "Lifestyle",
