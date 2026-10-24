@@ -14,7 +14,7 @@ fi
 
 rm -rf "$out" "$zip_path"
 mkdir -p "$out/skills/mindharbor/references"
-cp "$root/plugin/plugin.json" "$out/"
+cp "$root/plugin/plugin.json" "$root/plugin/mcp.json" "$out/"
 cp -r "$root/plugin/assets" "$out/"
 cp "$root/LICENSE" "$out/"
 

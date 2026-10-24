@@ -6,7 +6,11 @@
   "assets": {
     "directory": "./site",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": ["/api/*", "/mcp", "/.well-known/openai-apps-challenge"]
+  },
+  "vars": {
+    // Token shown by the OpenAI plugin portal's domain-verification step. Empty serves 404.
+    "OPENAI_APPS_CHALLENGE": ""
   },
   "d1_databases": [
     // Schema: schema.sql.

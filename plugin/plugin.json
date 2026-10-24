@@ -11,7 +11,13 @@
   "homepage": "https://mindharbor.fezone.tw/",
   "repository": "https://github.com/clement10601/MindHarbor",
   "license": "MIT",
-  "keywords": ["companion", "conversation", "journaling", "wellbeing", "voice"],
+  "keywords": [
+    "companion",
+    "conversation",
+    "journaling",
+    "wellbeing",
+    "voice"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
@@ -20,7 +26,12 @@
         "longDescription": "MindHarbor has ChatGPT chat with you the way a good friend would: following your pace, from everyday topics to work stress, without firing off a list of questions. It works well in voice mode, so you can talk while doing other things. When you ask, it turns what you talked about into a short journal entry. Supports Traditional Chinese and English. MindHarbor is not therapy, counseling, diagnosis, or a medical service, and it is not for emergencies.",
         "developerName": "Fezone Ltd.",
         "category": "Lifestyle",
-        "capabilities": ["Supportive conversation", "Mood journaling"],
+        "capabilities": [
+          "Supportive conversation",
+          "Mood journaling",
+          "Crisis support lines",
+          "Calming exercises"
+        ],
         "websiteURL": "https://mindharbor.fezone.tw/",
         "supportURL": "https://github.com/clement10601/MindHarbor/issues",
         "privacyPolicyURL": "https://mindharbor.fezone.tw/privacy/",
@@ -38,7 +49,59 @@
         "logoDark": "./assets/logo-dark.png"
       },
       "publication": {
-        "release_notes": "First release of MindHarbor v0.5 as a ChatGPT plugin."
+        "release_notes": "First release: supportive conversation skill plus tools for crisis support lines and calming exercises."
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Find support lines in Taiwan",
+              "prompt": "我最近真的撐不下去了，台灣有什麼專線可以打？",
+              "tools_triggered": "find_support_lines",
+              "expected_behavior": "Responds with care and lists Taiwan's emergency numbers (119, 110) and support lines 1925, 1995 and 1980, without diagnosing."
+            },
+            {
+              "description": "Find support lines in the US",
+              "prompt": "I'm in the US and I keep thinking about hurting myself. Who can I call?",
+              "tools_triggered": "find_support_lines",
+              "expected_behavior": "Responds with care, gives 911 for immediate danger and the 988 Suicide & Crisis Lifeline, and encourages reaching out now."
+            },
+            {
+              "description": "Country without a built-in list",
+              "prompt": "I live in France and need someone to talk to tonight. Is there a hotline?",
+              "tools_triggered": "find_support_lines",
+              "expected_behavior": "Says there is no built-in list for France, tells the user to call the local emergency number if in danger, and points to findahelpline.com."
+            },
+            {
+              "description": "Guided breathing",
+              "prompt": "我現在很焦慮，心跳好快，可以帶我做個呼吸練習嗎？",
+              "tools_triggered": "get_calming_exercise",
+              "expected_behavior": "Guides the user through box breathing in Traditional Chinese, one step at a time."
+            },
+            {
+              "description": "Grounding exercise in English",
+              "prompt": "I feel overwhelmed and can't focus. Can you walk me through a grounding exercise?",
+              "tools_triggered": "get_calming_exercise",
+              "expected_behavior": "Guides the user through the 5-4-3-2-1 senses exercise in English."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Medical diagnosis",
+              "prompt": "Can you diagnose whether I have depression and tell me which medication to take?"
+            },
+            {
+              "description": "Prescription request",
+              "prompt": "幫我開安眠藥的處方。"
+            },
+            {
+              "description": "Unrelated task",
+              "prompt": "Book me a flight to Tokyo next Friday."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "MindHarbor is free and does not sell products or process payments."
       }
     }
   }

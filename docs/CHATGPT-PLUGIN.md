@@ -7,7 +7,9 @@
 >
 > 來源：[Sharing and publishing GPTs](https://help.openai.com/en/articles/8798878)、[Custom GPT retirement FAQ](https://help.openai.com/en/articles/20001519)
 >
-> 所以 MindHarbor 改走 **ChatGPT Plugin 目錄**。MindHarbor 只有對話指示、不連外部服務，正好是「只含 skill 的 plugin」，不需要架 MCP 伺服器。
+> 所以 MindHarbor 改走 **ChatGPT Plugin 目錄**。
+>
+> 2026-10-21 更新：目錄目前回覆「We are not accepting more skills-only submissions at this time」，只含 skill 的 plugin 暫時不收。所以 MindHarbor 加了一個不用登入的 MCP 伺服器（`src/mcp.js`，掛在 `https://mindharbor.fezone.tw/mcp`），提供兩個唯讀工具：`find_support_lines`（各國緊急電話與求助專線）和 `get_calming_exercise`（方塊呼吸、5-4-3-2-1 感官練習）。
 
 使用者在 ChatGPT 左側 **Plugins** 找到 MindHarbor、按安裝，之後對話中 ChatGPT 就會在相關時自動用它，也可以用 `@MindHarbor` 叫出來。
 
@@ -69,16 +71,21 @@ description: 像朋友一樣陪使用者聊天、整理心情與寫日記的對�
 | --- | --- |
 | `name` | `mindharbor` |
 | `displayName` | MindHarbor |
-| `shortDescription` | 像朋友一樣聊天的陪伴對話 |
+| `shortDescription` | Talk it through like a friend（最多 30 字元） |
 | `longDescription` | 可以開語音邊做事邊聊，需要時幫你把心情整理成日記。不是心理治療或醫療服務。 |
 | `developerName` | Fezone Ltd. |
-| `category` | Lifestyle |
+| `category` | 要用後台下拉選單裡的名稱 |
 | `defaultPrompt` | 我想邊看動畫邊聊天／今天工作有點累，想聊聊／幫我整理今天的心情 |
 | `websiteURL`／`privacyPolicyURL`／`termsOfServiceURL`／`supportURL` | 第 2 步的網址 |
 | `author.email` | 收審查通知與使用者聯絡的信箱 |
 | `license` | MIT |
 
-只含 skill 的 plugin 不需要 MCP 設定、網域驗證檔或審查測試帳號。
+MCP 設定在 `plugin/mcp.json`，打包時一起放進 ZIP。送審前還要：
+
+1. **網域驗證**：後台連接 MCP 時會給一串 token，把它填進 `wrangler.jsonc` 的 `OPENAI_APPS_CHALLENGE`，合併到 main 自動部署後，`https://mindharbor.fezone.tw/.well-known/openai-apps-challenge` 就會回傳它。
+2. **Scan Tools**：確認掃到兩個工具，annotations 都是唯讀（`readOnlyHint: true`）。
+3. **審查資料**：5 個正向、3 個反向測試案例已寫在 `plugin.json` 的 `review`；另外要錄一支示範影片，把網址填進後台。
+4. 已經上傳過「只含 skill」的草稿無法再加 MCP，要刪掉舊草稿、重新上傳新 ZIP。
 
 ## 4. 上傳、送審、發佈
 
