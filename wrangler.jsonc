@@ -8,6 +8,10 @@
     "binding": "ASSETS",
     "run_worker_first": ["/api/*", "/mcp", "/.well-known/openai-apps-challenge"]
   },
+  // PR branches run `npx wrangler preview` (Workers Builds non-production
+  // deploy command), which refuses to run without this block. Empty is enough
+  // (same fix as fezone-site PR #46).
+  "previews": {},
   "vars": {
     // Token shown by the OpenAI plugin portal's domain-verification step. Empty serves 404.
     "OPENAI_APPS_CHALLENGE": ""
